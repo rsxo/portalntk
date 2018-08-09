@@ -2,5 +2,16 @@ spring:
   application:
     name: backend
 
+---
+spring:
+  profiles: default
+
 server:
-  port: 8080
+  port: 3000
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 80

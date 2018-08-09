@@ -4,12 +4,14 @@ services:
     build: backend/
     #image: ${repository_url}/backend:latest
     image: rsxo/backend:latest
-    ports:
-      - "8080:8080"
+    expose:
+      - "80"
   react-bff:
     build: react-bff/
     #image: ${repository_url}/react-bff:v1.1
     image: rsxo/react-bff:v1.1
     ports:
-    - "3000:3000"
+      - "80"
+    environment:
+      BACKEND_ALB_URL: http://backend/greeting
 

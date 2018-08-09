@@ -2,9 +2,22 @@ spring:
   application:
     name: react-bff
 
-server:
-  port: 3000
-
+---
+spring:
+  profiles: default
 backend:
   alb:
-    url: ${BACKEND_ALB_URL:http://localhost:8080/greeting}
+    url: http://localhost:8080/greeting
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: 80
+backend:
+  alb:
+    url: ${BACKEND_ALB_URL}
