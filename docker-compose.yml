@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    build: backend/
+    #image: ${repository_url}/backend:latest
+    image: rsxo/backend:latest
+    ports:
+      - "8080:8080"
+  react-bff:
+    build: react-bff/
+    #image: ${repository_url}/react-bff:v1.1
+    image: rsxo/react-bff:v1.1
+    ports:
+    - "3000:3000"
+
