@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: react-bff
+
+server:
+  port: 3000
+
+backend:
+  alb:
+    url: ${BACKEND_ALB_URL:http://localhost:8080/greeting}
